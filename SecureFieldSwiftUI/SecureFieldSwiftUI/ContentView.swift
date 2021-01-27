@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var email = ""
+    @State var password = ""
+        
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            TextField("Email", text: $email)
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(25)
+            
+            SecureField("Password", text: $password)
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(25)
+        }
+        .padding([.leading, .trailing])
     }
 }
 
